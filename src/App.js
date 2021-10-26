@@ -1,12 +1,16 @@
 
 import './App.css';
+import './components/NavBar/NavBar.css'
+import NavBar from './components/NavBar/NavBar';
 
-function App() {
+function App() { //componente tipo funcion
   return (
     <div className="App">
-      <h1>E-commerce de Alan Nicolas Prado</h1>
+      <NavBar/>
+      <h1>E-commerce de un sex-shop</h1>
     </div>
   );
 }
 
 export default App;
+ 

@@ -1,0 +1,40 @@
+.menu {
+    background-color: rgb(180, 122, 122);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 65px;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 300; }
+
+.navegacion ul {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+
+.navegacion li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 17px;
+    padding: 5px;
+    margin: 0px 5px;
+    transition: 1s; }
+
+.navegacion li:hover {
+    font-size: 22px;
+    transition: 1s; }
+
+.navegacion li a {
+    text-decoration: none;
+    color: #744d5a; }
+
+.navegacion li a:hover {
+    color: #feffc3; }
+
+.logoMenu {
+    font-size: 30px;
+    color: #744d5a;
+    margin-right: auto;
+    padding: 5px;
+    margin-left: 30px; }
