@@ -1,13 +1,15 @@
 
-import './App.css';
-import './components/NavBar/NavBar.css'
 import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import './App.css';
+import './components/NavBar/NavBar.css';
 
 function App() { //componente tipo funcion
+
   return (
     <div className="App">
       <NavBar/>
-      <h1>E-commerce de un sex-shop</h1>
+      <ItemListContainer greeting='Este es un sex shop'/>
     </div>
   );
 }

@@ -27,14 +27,14 @@
 
 .navegacion li a {
     text-decoration: none;
-    color: #744d5a; }
+    color: black; }
 
 .navegacion li a:hover {
     color: #feffc3; }
 
 .logoMenu {
     font-size: 30px;
-    color: #744d5a;
+    color: black;
     margin-right: auto;
     padding: 5px;
     margin-left: 30px; }
