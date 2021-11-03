@@ -1,6 +1,8 @@
 
+import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import { Titulo } from './Titulo';
 import './App.css';
 import './components/NavBar/NavBar.css';
 

@@ -1,0 +1,18 @@
+.contador button{
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.contador label{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.agregarItem button{
+    font-size: 20px;
+    height: 70px;
+    width: 150px;
+    margin: 10px;
+}
