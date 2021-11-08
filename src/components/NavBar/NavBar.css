@@ -37,4 +37,9 @@
     color: black;
     margin-right: auto;
     padding: 5px;
-    margin-left: 30px; }
+    margin-left: 30px; 
+    }
+
+.logoMenu p{
+    margin-bottom: 0px;   
+}

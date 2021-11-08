@@ -1,10 +1,10 @@
 
-import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import { Titulo } from './Titulo';
 import './App.css';
 import './components/NavBar/NavBar.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() { //componente tipo funcion
 
