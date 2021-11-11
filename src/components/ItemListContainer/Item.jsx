@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import ItemCount from '../ItemCount/ItemCount'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import './Item.css'
 
 const Item = ({prod}) => {
@@ -13,10 +13,10 @@ const Item = ({prod}) => {
                 <Card.Body>
                   <Card.Title className="tituloCard">{prod.nombre}</Card.Title>
                   <Card.Text>
-                    {prod.descripcion}
+                    Precio: ${prod.precio}
                   </Card.Text>
                   <Card.Text>
-                    <ItemCount initial={1} stock={prod.stock}/>
+                    <ItemDetailContainer/>
                   </Card.Text>
                 </Card.Body>
               </Card>
