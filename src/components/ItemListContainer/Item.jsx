@@ -1,29 +1,29 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
+import { Card, Col} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import './Item.css'
 
 const Item = ({prod}) => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="sm={4}>sm=4">
+                <Col xs={4} >
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={prod.imagen} />
                 <Card.Body>
                   <Card.Title className="tituloCard">{prod.nombre}</Card.Title>
                   <Card.Text>
-                    Precio: ${prod.precio}
+                    Precio: ${prod.precio} <br />
+                    Stock: {prod.stock}
                   </Card.Text>
                   <Card.Text>
-                    <ItemDetailContainer/>
+                    <Link to={`/detail/${prod.id}`}><button>
+                    Ver Mas
+                    </button></Link>
                   </Card.Text>
                 </Card.Body>
               </Card>
-              </div>
-              </div>
-        </div>
+              </Col>
     )
+    
 }
 
 export default Item
