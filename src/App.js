@@ -2,11 +2,11 @@
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
 import './App.css';
 import './components/NavBar/NavBar.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-
 
 function App() { //componente tipo funcion
 
@@ -23,6 +23,9 @@ function App() { //componente tipo funcion
         </Route>
         <Route exact path='/detail/:id'>
           <ItemDetailContainer/>
+        </Route>
+        <Route exact path='/cart'>
+          <Cart/>
         </Route>
       </Switch>
     </div>

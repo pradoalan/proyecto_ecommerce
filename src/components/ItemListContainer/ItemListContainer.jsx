@@ -33,7 +33,7 @@ function ItemListContainer({greeting}) {
 
     return (
         <div /*style={{height: '600px'}}*/>
-            <h1>{greeting}</h1> <br />
+            <h1 className="paginaPrincipal">{greeting}</h1> <br />
             { loading ? <Spinner animation="border" role="status">
                             <span className="visually-hidden">Loading...</span>
                         </Spinner> : <ItemList products={products}/>} 
