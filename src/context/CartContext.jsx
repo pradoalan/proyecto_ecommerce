@@ -10,38 +10,45 @@ const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([])
 
-    function agregarCarrito(item, cant) {
-        if(isIncart(item)){
-            let newCartList = cartList
-            newCartList.forEach(cartItem => {
-                if(cartItem.id === item.id){
-                    cartItem.cant += cant
-                }
-            } )
-            setCartList(newCartList)
-        }
+    const agregarCarrito = (item, agregado) => {
+        
+        let isInCart = cartList.find((cartItem) => cartItem.id === item.id);
 
+        if (isInCart){
+            isInCart.agregado += agregado
+            setCartList([...cartList])
+        }
         else{
-            setCartList([...cartList, {...item, cant}])
+            setCartList([...cartList, {...item, agregado}])
         }
         
+    }
+
+    const borrarItem = (id) => {
+        setCartList(cartList.filter((item) => item.id !== id));
     }
 
     const borrarCart= () =>{
         setCartList([])
     }
 
-    const isIncart = (item) =>{
-        return cartList.some(cartItem => cartItem.id === item.id)
+    const cantidadItem = () =>{
+        return cartList.reduce((acum, item)=> acum = acum + item.agregado, 0)
+    }  
+
+    const precioTotal = () => {
+        return cartList.reduce((acum, item) => (acum += item.precio * item.agregado), 0)
     }
     
 
     return (
         <CartContext.Provider value={{
             cartList,
-            agregarCarrito, 
+            agregarCarrito,
+            borrarItem,
             borrarCart,
-            isIncart 
+            cantidadItem,
+            precioTotal
             }}>
             {children}
         </CartContext.Provider>

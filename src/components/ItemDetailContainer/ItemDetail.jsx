@@ -17,8 +17,8 @@ const ItemDetail = ({item}) => {
 
   const handleAdd = (cant) => {
     setCantidad(cant)
-    console.log(cant);
-    agregarCarrito({...item, agregado: cant})
+    console.log(cant)
+    agregarCarrito(item, cant)
     setClick(true)
   }
 

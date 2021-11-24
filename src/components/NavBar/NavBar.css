@@ -21,10 +21,6 @@
     margin: 0px 5px;
     transition: 1s; }
 
-.navegacion li:hover {
-    font-size: 22px;
-    transition: 1s; }
-
 .navegacion li a {
     text-decoration: none;
     color: black; }
@@ -42,4 +38,9 @@
 
 .logoMenu p{
     margin-bottom: 0px;   
+}
+
+.carrito{
+    color: black  
+
 }
