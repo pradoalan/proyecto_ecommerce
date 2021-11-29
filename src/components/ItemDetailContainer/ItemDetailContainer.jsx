@@ -2,36 +2,23 @@
 import { useEffect, useState } from 'react'
 import { Container, Row, Spinner } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
-import { productos } from '../Services/GetFetch'
+import { getFirestore } from '../../service/getFirestore'
 import ItemDetail from './ItemDetail'
 
 
 const ItemDetailContainer = () => {
 
-    const getItem = new Promise((resolve, reject)=>{
-        const condition=true
-        if (condition) {
-            setTimeout(()=>{
-                resolve(productos)
-            },2000)
-        }
-        else{
-            setTimeout(()=>{
-                reject("404 error, not found")
-            },2000)
-        }
-    })
-
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState({})
     const [loading, setloading] = useState(true);
-
     const {id} = useParams()
 
     useEffect(() => {
-        getItem
-        .then(res=> setItem(res.find(element => element.id === parseInt(id))))
+        const db = getFirestore()
+
+        db.collection('productos').doc(id).get()
+        .then(res => setItem({id: res.id, ...res.data()}))
         .catch(err => console.log(err))
-        .finally(()=> setloading(false))
+        .finally(setTimeout(() => setloading(false), 2000))        
     },[id])
 
     return (
