@@ -16,7 +16,7 @@ function ItemListContainer({greeting}) {
         const db = getFirestore()
 
         const dbQuery = categoryID ? db.collection('productos').where('categoria', '==', categoryID) : db.collection('productos')
-        
+
         dbQuery.get()
         .then(res => setproducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) )))
         .catch(err => console.log(err))

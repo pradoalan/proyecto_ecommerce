@@ -20,7 +20,7 @@ function ItemCount({stock, initial, onAdd}) {
             <button onClick={restarItem} disabled={count <= initial}>-</button>
             <br />
             <div  className="agregarItem">
-            <button onClick={() => onAdd(count)} >Agregar Item</button>
+            <button onClick={() => onAdd(count)} disabled={stock === 0} >Agregar Item</button>
             </div>
         </div>
     )
