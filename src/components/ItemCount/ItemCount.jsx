@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import './ItemCount.css'
 
@@ -14,13 +15,12 @@ function ItemCount({stock, initial, onAdd}) {
 
     return (
         <div className="contador">
-
-            <button onClick={sumarItem} disabled={count >= stock}>+</button>
+            <Button variant="dark" onClick={sumarItem} disabled={count >= stock}>+</Button>
             <label>Cantidad: {count}</label>
-            <button onClick={restarItem} disabled={count <= initial}>-</button>
+            <Button variant="dark" onClick={restarItem} disabled={count <= initial}>-</Button>
             <br />
             <div  className="agregarItem">
-            <button onClick={() => onAdd(count)} disabled={stock === 0} >Agregar Item</button>
+            <Button variant="dark" onClick={() => onAdd(count)} disabled={stock === 0} >Agregar Item</Button>
             </div>
         </div>
     )

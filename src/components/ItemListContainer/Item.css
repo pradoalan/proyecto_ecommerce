@@ -1,5 +1,11 @@
+
+.cardProducto{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .tituloCard{
-    font-size: 40px;
+    font-size: 25px;
     border: 1px solid black;
     background-color: rgb(180, 122, 122);
 }

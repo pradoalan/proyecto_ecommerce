@@ -1,6 +1,5 @@
-import Button from '@restart/ui/esm/Button'
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 
 const CartModal = ({show, onHide, ordenId, cliente}) => {
     return (
@@ -15,10 +14,10 @@ const CartModal = ({show, onHide, ordenId, cliente}) => {
           <Modal.Title>Compra Finalizada!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {cliente}, gracias por tu compra! Tu numero de orden es: <strong>{ordenId}</strong>. Mandanos un mail a <strong> xxxxx@xxxx.com</strong> con el numero generado para ponernos en contacto con vos. Muchas gracias!
+          {cliente}, gracias por tu compra! Tu numero de orden es: <strong>{ordenId}</strong>. Mandanos un mail a <strong> conchitamistica@gmail.com</strong> con el numero generado para ponernos en contacto con vos. Muchas gracias!
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={onHide}>
+          <Button variant="dark" onClick={onHide}>
             Cerrar
           </Button>
         </Modal.Footer>

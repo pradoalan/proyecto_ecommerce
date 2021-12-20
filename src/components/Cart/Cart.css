@@ -1,0 +1,21 @@
+.estiloCart{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.estiloCart li{
+    margin: 5px;
+}
+
+.estiloCart p{
+    font-size: 20px;
+}
+
+.cart{
+    height: 100vh;
+}
+
+.cart h1{
+    font-size: 40px
+}

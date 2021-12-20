@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { getFirestore } from '../../service/getFirestore';
+import Loader from '../Loader/Loader';
 import ItemList from './ItemList';
 import './ItemListContainer.css'
 
@@ -20,19 +20,16 @@ function ItemListContainer({greeting}) {
         dbQuery.get()
         .then(res => setproducts(res.docs.map(prod => ({id: prod.id, ...prod.data()}) )))
         .catch(err => console.log(err))
-        .finally(setTimeout(() => setloading(false), 2000))        
+        .finally(setTimeout(() => setloading(false), 2000),
+        window.scrollTo(0, 0))        
 
     }, [categoryID])
 
-    console.log(products)
-
     return (
-        <div /*style={{height: '600px'}}*/>
-            <h1 className="paginaPrincipal">{greeting}</h1> <br />
-            { loading ? <Spinner animation="border" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </Spinner> : <ItemList products={products}/>} 
-        </div>
+        <>
+            <h1 className="paginaPrincipal">{greeting}</h1>
+            { loading ? <Loader/> : <ItemList products={products}/>} 
+        </>
     )
 }
 

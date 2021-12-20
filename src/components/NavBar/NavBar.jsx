@@ -15,9 +15,9 @@ const NavBar = () => {
            <div className="navegacion">
                 <ul>
                     <li><Link to='/'>Catalogo completo</Link></li>
-                    <li><Link to='/categoria/dildo'>Dildo</Link></li>
+                    <li><Link to='/categoria/consoladores'>Consoladores</Link></li>
                     <li><Link to='/categoria/parejas'>Parejas</Link></li>
-                    <li><Link to='/categoria/gel'>Gel</Link></li>
+                    <li><Link to='/categoria/lubricacion'>Lubricacion</Link></li>
                     <Link to='/Cart'><li className="carrito"><CartWidget/>{cantidadItem() !== 0 && cantidadItem()}</li></Link>
                 </ul>
            </div>

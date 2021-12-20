@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Button from 'react-bootstrap/Button'
 
 const CartVacio = () => {
     return (
@@ -6,7 +7,7 @@ const CartVacio = () => {
             <h1>Carrito Vacio</h1>
             <h2>No hay productos seleccionados :(</h2>
             <br/>
-            <Link to='/'><button>Comenza tu compra!</button></Link>            
+            <Link to='/'><Button variant="dark">Comenza tu compra!</Button></Link>            
         </>
     )
 }

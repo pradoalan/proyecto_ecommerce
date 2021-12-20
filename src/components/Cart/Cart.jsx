@@ -7,6 +7,8 @@ import CartVacio from './CartVacio'
 import FormCart from './FormCart'
 import { useState } from 'react'
 import CartModal from './CartModal';
+import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
+import './Cart.css'
 
 const Cart = () => {
 
@@ -69,26 +71,31 @@ const Cart = () => {
         borrarCart()
     }
 
-    console.log(ordenId);
-
     return (
-        <div>
+        <div className='cart'>
             {cartList.length === 0 ? <CartVacio/> : 
             <>
             <h1>Carrito de compras</h1>
             <br />
-            {cartList.map(prod => <li key={prod.id}>{prod.nombre} - cantidad: {prod.agregado} - Precio Unitario:${prod.precio} - Subtotal: ${prod.precio * prod.agregado} <button onClick={() => borrarItem(prod.id)}>Borrar Item</button></li>)}
+            <div className='estiloCart'>
+            <div>
+            <ListGroup>
+            {cartList.map(prod =>
+                <ListGroupItem key={prod.id}><strong>{prod.nombre}</strong> - Cantidad: {prod.agregado} - Precio Unitario: ${prod.precio} - Subtotal: ${prod.precio * prod.agregado} <Button variant="dark" onClick={() => borrarItem(prod.id)}>X</Button></ListGroupItem>
+            )}
+            </ListGroup>
             <br />
-            Total de compra: ${precioTotal()}
+            <p><strong>Total de compra: ${precioTotal()}</strong></p>
+            <Link to='/'><Button variant="dark">Volver</Button></Link>{' '}
+            <Button variant="dark" onClick={borrarCart}>Limpiar Carrito</Button>
+            </div>
             <br/>
-            <Link to='/'><button>Volver</button></Link>
-            <button onClick={borrarCart}>Limpiar Carrito</button>
-            <br/>
-            <br/>
-            <strong>Check-Out</strong> 
-            <br />
+            <div>
+            <p><strong>Check-Out</strong></p> 
             <FormCart generarOrden={generarOrden} cliente={cliente} setCliente={setCliente} mail={mail} setMail={setMail} tel={tel} setTel={setTel} clickModal={clickModal}/>
             <CartModal show={showModal} onHide={cerrarModal} ordenId={ordenId} cliente={cliente}/>
+            </div>
+            </div>
             </>  
             }
         </div>

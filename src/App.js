@@ -19,7 +19,7 @@ function App() { //componente tipo funcion
         <NavBar/>
         <Switch>
           <Route exact path='/'>
-            <ItemListContainer greeting='Este es un sex shop'/>
+            <ItemListContainer greeting='Juguetes intimos para su placer...'/>
           </Route>
           <Route exact path='/categoria/:categoryID'>
             <ItemListContainer greeting='Este es un sex shop'/>

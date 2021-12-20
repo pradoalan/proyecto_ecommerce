@@ -1,11 +1,10 @@
 
 
 import { useState } from "react";
-import { Card, Col} from "react-bootstrap"
+import { Button, Card, Col} from "react-bootstrap"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
-import './ItemDetail.css'
 
 
 const ItemDetail = ({item}) => {
@@ -17,7 +16,6 @@ const ItemDetail = ({item}) => {
 
   const handleAdd = (cant) => {
     setCantidad(cant)
-    console.log(cant)
     agregarCarrito(item, cant)
     setClick(true)
   }
@@ -29,7 +27,7 @@ const ItemDetail = ({item}) => {
   }
 
   const PostClick = () => {
-    return (<><br/>Cantidad agregada al carrito: {cantidad} <Link to='/'><button>Volver</button></Link> <Link to='/cart'><button>Ir al carrito</button></Link></>)
+    return (<><br/>Cantidad agregada al carrito: {cantidad} <Link to='/'><Button variant="dark">Volver</Button></Link> <Link to='/cart'><Button variant="dark">Ir al carrito</Button></Link></>)
   }
     return (
         <>
@@ -37,16 +35,15 @@ const ItemDetail = ({item}) => {
       { item &&     
 
 
-          <Col>
-          <Card style={{ width: '18rem' }}>
-              <Card.Img  className="detalleImagen" variant="top" src={item.imagen} />
+          <Col sm={12} md={6} lg={4}>
+          <Card style={{ width: '18rem' }} className="text-center">
+              <Card.Header as="h5">{item.nombre}</Card.Header>
+              <Card.Img variant="top" src={item.imagen} />
               <Card.Body>
-                <Card.Title>{item.nombre}</Card.Title>
-                <Card.Text className="detalleItem">{item.descripcion} <br />
+                <Card.Text>{item.descripcion} <br />
               Precio: ${item.precio} <br /> Stock: {item.stock}
               <br />
               {click ? <PostClick/> : <PreClick/>}
-              
                 </Card.Text>
               </Card.Body>
             </Card>

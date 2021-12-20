@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, Col} from 'react-bootstrap'
+import { Button, Card, Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Item.css'
 
 const Item = ({prod}) => {
     return (
-                <Col xs={4} >
-            <Card style={{ width: '18rem' }}>
+            <Col sm={12} md={6} lg={4}>
+            <Card style={{ width: '18rem' }} className="cardProducto">
                 <Card.Img variant="top" src={prod.imagen} />
                 <Card.Body>
                   <Card.Title className="tituloCard">{prod.nombre}</Card.Title>
@@ -15,9 +15,9 @@ const Item = ({prod}) => {
                     Stock: {prod.stock}
                   </Card.Text>
                   <Card.Text>
-                    <Link to={`/detail/${prod.id}`}><button>
+                    <Link to={`/detail/${prod.id}`}><Button variant="outline-dark">
                     Ver Mas
-                    </button></Link>
+                    </Button></Link>
                   </Card.Text>
                 </Card.Body>
               </Card>

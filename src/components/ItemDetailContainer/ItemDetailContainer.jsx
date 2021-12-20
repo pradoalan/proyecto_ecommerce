@@ -1,9 +1,11 @@
 
 import { useEffect, useState } from 'react'
-import { Container, Row, Spinner } from 'react-bootstrap'
+import { Container, Row} from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { getFirestore } from '../../service/getFirestore'
+import Loader from '../Loader/Loader'
 import ItemDetail from './ItemDetail'
+import './ItemDetailContainer.css'
 
 
 const ItemDetailContainer = () => {
@@ -18,15 +20,14 @@ const ItemDetailContainer = () => {
         db.collection('productos').doc(id).get()
         .then(res => setItem({id: res.id, ...res.data()}))
         .catch(err => console.log(err))
-        .finally(setTimeout(() => setloading(false), 2000))        
+        .finally(setTimeout(() => setloading(false), 2000),
+         window.scrollTo(0, 0))        
     },[id])
 
     return (
-        <Container fluid>
+        <Container fluid className="itemDetailStyle">
             <Row>
-                 { loading ? <Spinner animation="border" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </Spinner> : <ItemDetail item={item}/>}        
+                 { loading ? <Loader/> : <ItemDetail item={item}/>}        
             </Row>
         </Container>
     )

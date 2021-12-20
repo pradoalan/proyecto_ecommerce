@@ -1,13 +1,18 @@
-.contador button{
+/* .contador button{
     height: 40px;
     width: 40px;
     font-size: 25px;
     cursor: pointer;
-}
+} */
 
 .contador label{
     font-size: 20px;
     padding: 10px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .agregarItem button{
